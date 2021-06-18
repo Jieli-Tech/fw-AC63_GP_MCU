@@ -32,11 +32,9 @@ A63 系列通用MCU SDK 固件程序
 
 * 芯片简介 : [SoC 数据手册扼要](./doc)
 
-* SDK 版本信息 : [SDK 历史版本](doc/)
+* SDK 版本信息 : [SDK 历史版本](doc/AC638N_General_Purpose_MCU_sdk发布版本信息V1.0.pdf)
 
-* SDK 介绍文档 : [SDK 快速开始简介](./doc/)
-
-* SDK 结构文档 : [SDK 模块结构](./doc/)
+* SDK 介绍文档 : [SDK 快速开始简介](./doc/AC638N通用mcu开发调试说明v1.0.pdf)
 
 编译工程
 -------------
@@ -47,10 +45,6 @@ A63 系列通用MCU SDK 固件程序
 SDK 同时支持Codeblock 和 Make 编译环境，请确保编译前已经搭建好编译环境，
 
 * Codeblock 编译 : 进入对应的工程目录并找到后缀为 `.cbp` 的文件, 双击打开便可进行编译.
-
-* Makefile 编译 : `apps/app_cfg` 开始编译之前，需要先选择好目标应用并编辑保存, 请双击 `make_prompt` 并输入 `make`
-
-  `在编译下载代码前，请确保USB 升级工具正确连接并且进入编程模式`
   
 
 硬件环境

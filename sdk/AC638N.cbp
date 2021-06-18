@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeBlocks_project_file>
+<FileVersion major="1" minor="6" />
+<Project>
+<Option title="AC638N" />
+<Option compiler="pi32v2_r3_lto_compiler" />
+<Build>
+<Target title="Release">
+<Option output="bsp/AC638N/output/sdk.elf" prefix_auto="0" extension_auto="0" />
+<Option object_output="obj/Release/" />
+<Option type="1" />
+<Option compiler="pi32v2_r3_lto_compiler" />
+<Compiler>
+<Add option="-Wuninitialized" />
+<Add option="-Wno-invalid-noreturn" />
+<Add option="-fno-common" />
+<Add option="-integrated-as" />
+<Add option="-Oz" />
+<Add option="-g" />
+<Add option="-flto" />
+<Add option="-fallow-pointer-null" />
+<Add option="-fprefer-gnu-section" />
+<Add option="-Wno-shift-negative-value" />
+<Add option="-fms-extensions" />
+<Add option="-DSUPPORT_MS_EXTENSIONS" />
+<Add option="-D__GCC_PI32V2__" />
+<Add option="-DCONFIG_OS_ENABLE=0" />
+<Add option="-DCONFIG_FREE_RTOS_ENABLE" />
+<Add option="-DCONFIG_RELEASE_ENABLE" />
+<Add option="-DCONFIG_MMU_ENABLE" />
+<Add directory="bsp/include" />
+<Add directory="bsp/AC638N/include" />
+</Compiler>
+<Linker>
+<Add option="--plugin-opt=-pi32v2-always-use-itblock=false" />
+<Add option="--plugin-opt=-enable-ipra=true" />
+<Add option="--plugin-opt=-pi32v2-merge-max-offset=4096" />
+<Add option="--plugin-opt=-pi32v2-enable-simd=true" />
+<Add option="--plugin-opt=mcpu=r3" />
+<Add option="--plugin-opt=-enable-movable-region=true" />
+<Add option="--plugin-opt=-movable-region-section-prefix=movable.slot." />
+<Add option="--plugin-opt=-global-merge-on-const" />
+<Add option="--plugin-opt=-inline-threshold=10" />
+<Add option="--plugin-opt=-inline-normal-into-special-section=true" />
+<Add option="--plugin-opt=-dont-used-symbol-list=malloc,free,sprintf,printf,puts,putchar" />
+<Add option="--plugin-opt=save-temps" />
+<Add option="--plugin-opt=-pi32v2-enable-rep-memop" />
+<Add option="--sort-common" />
+<Add option="--dont-complain-call-overflow" />
+<Add option="--start-group" />
+<Add option="bsp/printf.a" />
+<Add option="bsp/resfile.a" />
+<Add option="bsp/vm.a" />
+<Add option="bsp/chargestore.a" />
+<Add option="bsp/AC638N/src/agreement.a" />
+<Add option="bsp/AC638N/src/memory.a" />
+<Add option="bsp/AC638N/src/cache.a" />
+<Add option="bsp/AC638N/src/sfc_flash.a" />
+<Add option="bsp/AC638N/src/clock.a" />
+<Add option="bsp/AC638N/src/power.a" />
+<Add option="bsp/AC638N/src/efuse.a" />
+<Add option="--end-group" />
+<Add option="-Tbsp/AC638N/output/sdk.ld" />
+<Add option="-M=bsp/AC638N/output/sdk.map" />
+<Add library="C:\JL\pi32\pi32v2-lib\r3\libm.a" />
+</Linker>
+<ExtraCommands>
+<Add before="$compiler $options $includes -D__LD__ -E -P bsp\AC638N\src\sdk_ld.c -o bsp\AC638N\output\sdk.ld" />
+<Mode before="always" />
+<Add after="bsp\AC638N\tools\download.bat sdk" />
+<Mode after="always" />
+</ExtraCommands>
+</Target>
+</Build>
+<Unit filename="apps/main.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/board/board_demo.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/include/asm/AC638N.h" />
+<Unit filename="bsp/AC638N/include/asm/adc_api.h" />
+<Unit filename="bsp/AC638N/include/asm/boot.h" />
+<Unit filename="bsp/AC638N/include/asm/cache.h" />
+<Unit filename="bsp/AC638N/include/asm/charge.h" />
+<Unit filename="bsp/AC638N/include/asm/chargestore_hw.h" />
+<Unit filename="bsp/AC638N/include/asm/clock.h" />
+<Unit filename="bsp/AC638N/include/asm/clock_hw.h" />
+<Unit filename="bsp/AC638N/include/asm/cpu.h" />
+<Unit filename="bsp/AC638N/include/asm/crc16.h" />
+<Unit filename="bsp/AC638N/include/asm/csfr.h" />
+<Unit filename="bsp/AC638N/include/asm/ctmu.h" />
+<Unit filename="bsp/AC638N/include/asm/debug.h" />
+<Unit filename="bsp/AC638N/include/asm/efuse.h" />
+<Unit filename="bsp/AC638N/include/asm/gpio.h" />
+<Unit filename="bsp/AC638N/include/asm/hwi.h" />
+<Unit filename="bsp/AC638N/include/asm/iic_hw.h" />
+<Unit filename="bsp/AC638N/include/asm/iic_soft.h" />
+<Unit filename="bsp/AC638N/include/asm/includes.h" />
+<Unit filename="bsp/AC638N/include/asm/io_imap.h" />
+<Unit filename="bsp/AC638N/include/asm/io_omap.h" />
+<Unit filename="bsp/AC638N/include/asm/irflt.h" />
+<Unit filename="bsp/AC638N/include/asm/irq.h" />
+<Unit filename="bsp/AC638N/include/asm/key_driver.h" />
+<Unit filename="bsp/AC638N/include/asm/power/p11.h" />
+<Unit filename="bsp/AC638N/include/asm/power/p33.h" />
+<Unit filename="bsp/AC638N/include/asm/power_interface.h" />
+<Unit filename="bsp/AC638N/include/asm/pwm_led.h" />
+<Unit filename="bsp/AC638N/include/asm/rtc.h" />
+<Unit filename="bsp/AC638N/include/asm/spi.h" />
+<Unit filename="bsp/AC638N/include/asm/timer.h" />
+<Unit filename="bsp/AC638N/include/asm/timer_cap.h" />
+<Unit filename="bsp/AC638N/include/asm/timer_pwm.h" />
+<Unit filename="bsp/AC638N/include/asm/uart.h" />
+<Unit filename="bsp/AC638N/include/asm/wdt.h" />
+<Unit filename="bsp/AC638N/src/adc.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/boot.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/charge.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/chargestore_hw.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/crc16.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/ctmu.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/debug.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/debug_uart.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/gpio.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/hwi.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/iic_eeprom_test.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/iic_hw.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/iic_soft.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/irflt.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/key_driver.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/pwm_led.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/rtc.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/spi.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/spi_test.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/startup.S" />
+<Unit filename="bsp/AC638N/src/tick_timer.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/timer.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/timer_cap.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/timer_pwm.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/uart.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/AC638N/src/wdt.c"><Option compilerVer="CC"/></Unit>
+<Unit filename="bsp/include/bsp_malloc.h" />
+<Unit filename="bsp/include/chargestore.h" />
+<Unit filename="bsp/include/errno-base.h" />
+<Unit filename="bsp/include/ioctl.h" />
+<Unit filename="bsp/include/ioctl_cmds.h" />
+<Unit filename="bsp/include/msg.h" />
+<Unit filename="bsp/include/printf.h" />
+<Unit filename="bsp/include/resfile.h" />
+<Unit filename="bsp/include/typedef.h" />
+<Unit filename="bsp/include/vm.h" />
+<Unit filename="bsp/include/vm_id.h" />
+<Unit filename="bsp/msg.c"><Option compilerVer="CC"/></Unit>
+</Project>
+</CodeBlocks_project_file>
