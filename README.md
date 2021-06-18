@@ -1,9 +1,6 @@
 # fw-AC63_GP_MCU
 About Firmware for Generic MCU SDK（AC63 series）, Support AC638N
 
-
-# fw-AD15N_SDK   
-
 中文 | [EN](./README-en.md)
 
 A63 系列通用MCU SDK 固件程序
